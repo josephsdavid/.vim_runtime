@@ -3,7 +3,7 @@
 "       This requries that you install https://github.com/amix/vimrc !
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => GUI related
@@ -30,7 +30,7 @@ set guioptions-=L
 " Colorscheme
 set background=dark
 colorscheme gruvbox
-let g:gruvbox_contrast_dark = 'soft'
+
 
 
 
@@ -151,8 +151,10 @@ nnoremap * :let @/ = ""<CR>:call gruvbox#hls_show()<CR>*
 nnoremap / :let @/ = ""<CR>:call gruvbox#hls_show()<CR>/
 nnoremap ? :let @/ = ""<CR>:call gruvbox#hls_show()<CR>?
 
+"NERDTREE OPEN
+"
+map <C-n> :NERDTreeToggle<CR>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 func! DeleteTillSlash()
